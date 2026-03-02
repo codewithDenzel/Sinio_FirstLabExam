@@ -1,145 +1,115 @@
-/* General Page Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* Soft blue-gray background */
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background-color: #eef2f7; 
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    color: #2d3748;
+    color: #333;
 }
 
-.container { 
-    width: 100%; 
-    max-width: 600px; 
-    padding: 20px;
-}
+.container { width: 100%; max-width: 500px; }
 
 h1 { 
-    font-size: 32px; 
-    font-weight: 800;
+    font-size: 28px; 
     margin-bottom: 25px; 
-    color: #1a365d; /* Deep Navy */
-    text-align: left;
+    color: #2c3e50; 
+    border-left: 5px solid #3498db; 
+    padding-left: 15px;
 }
 
-/* Student Record Cards */
 .card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    background: white;
+    border: none; 
+    border-radius: 8px;
     padding: 20px;
     margin-bottom: 15px;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    transition: transform 0.2s; 
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    border-color: #3182ce; /* Blue highlight on hover */
+    transform: translateY(-3px); 
 }
 
-.card strong {
-    font-size: 18px;
-    color: #2c5282;
-}
+.sub-text { color: #7f8c8d; font-size: 14px; margin-top: 5px; }
 
-.sub-text { 
-    color: #718096; 
-    font-size: 14px; 
-    margin-top: 5px; 
-    line-height: 1.6;
-}
 
-/* Action Buttons */
-.btn-main {
+.btn-outline {
     display: block;
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     text-align: center;
-    background-color: #2b6cb0; /* Primary Blue */
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    transition: background 0.2s;
     border: none;
-    cursor: pointer;
+    background-color: #3498db; /* Primary Blue */
+    text-decoration: none;
+    color: white; /* White text on blue */
+    font-weight: bold;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    transition: background 0.3s;
 }
 
-.btn-main:hover {
-    background-color: #2c5282; /* Darker Blue */
+.btn-outline:hover {
+    background-color: #2980b9; 
 }
 
-/* Form Styling */
-.form-group { margin-bottom: 20px; }
 
-label { 
-    display: block; 
-    font-size: 14px; 
-    font-weight: 600;
-    margin-bottom: 8px; 
-    color: #4a5568; 
-}
-
+.form-group { margin-bottom: 15px; }
+label { display: block; font-size: 14px; margin-bottom: 8px; font-weight: bold; color: #34495e; }
 input {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
     box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.2s;
-}
-
-input:focus {
-    border-color: #3182ce;
     outline: none;
 }
 
-/* Three-Dot Menu */
-.dots { 
+input:focus {
+    border-color: #3498db; 
+}
+
+
+.menu-dots { 
     position: absolute; 
-    right: 20px; 
-    top: 20px; 
+    right: 15px; 
+    top: 15px; 
     cursor: pointer; 
-    color: #a0aec0;
+    color: #bdc3c7; 
     font-size: 20px;
-    padding: 5px;
 }
 
 .dropdown {
     display: none;
     position: absolute;
-    right: 0;
-    top: 30px;
+    right: 15px;
+    top: 40px;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    z-index: 100;
-    min-width: 120px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
     overflow: hidden;
-    border: 1px solid #e2e8f0;
 }
 
-.dots:hover .dropdown { display: block; }
+.card:hover .dropdown { display: block; }
 
 .dropdown a { 
     display: block; 
-    padding: 12px 16px; 
+    padding: 12px 20px; 
     text-decoration: none; 
-    color: #4a5568; 
+    color: #333; 
     font-size: 14px; 
 }
 
 .dropdown a:hover { 
-    background-color: #edf2f7; 
-    color: #3182ce;
+    background: #f8f9fa; 
+    color: #3498db; 
 }
 
-.dropdown a.delete-link:hover {
-    background-color: #fff5f5;
-    color: #c53030; /* Red for delete */
+
+.dropdown a[href*="delete"]:hover {
+    background: #fff5f5;
+    color: #e74c3c; 
 }
